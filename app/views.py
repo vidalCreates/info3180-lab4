@@ -30,7 +30,7 @@ def add_file():
     if not session.get('logged_in'):
         abort(401)
 
-    file_folder = './app/static/uploads'
+    file_folder = app.config['UPLOAD_FOLDER']
 
     if request.method == 'POST':
         file = request.files['file']
@@ -50,11 +50,12 @@ def display_files():
 
     import os
     rootdir = os.getcwd()
+    file_folder = app.config['UPLOAD_FOLDER']
 
-    print rootdir
+    #print rootdir
 
     listing = []
-    for subdir, dirs, files in os.walk(rootdir + './app/static/uploads'):
+    for subdir, dirs, files in os.walk(rootdir + file_folder):
         for f in files:
             listing += [f]
 

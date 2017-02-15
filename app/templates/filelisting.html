@@ -7,7 +7,7 @@
     {% if listing %}
         {% for file in listing %}
             {% if ".jpg" in file %}
-                <li><img src="{{ url_for('static',filename="uploads/"+file)}}" style="width:100px;height:60px;"/>
+                <li><img src="{{ url_for('static',filename="uploads/"+file)}}" style="width:180px;height:100px;"/>
             {% else %}
                 <li>{{ file }}</li>
             {% endif %}
