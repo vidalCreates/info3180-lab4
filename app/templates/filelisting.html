@@ -6,7 +6,7 @@
     <ul>
     {% if listing %}
         {% for file in listing %}
-            {% if ".jpg" in file %}
+            {% if ".jpg" in file or ".png" in file %}
                 <li><img src="{{ url_for('static',filename="uploads/"+file)}}" style="width:180px;height:100px;"/>
             {% else %}
                 <li>{{ file }}</li>

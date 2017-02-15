@@ -55,7 +55,7 @@ def display_files():
     #print rootdir
 
     listing = []
-    for subdir, dirs, files in os.walk(rootdir + file_folder):
+    for subdir, dirs, files in os.walk(file_folder):
         for f in files:
             listing += [f]
 
