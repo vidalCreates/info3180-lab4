@@ -4,8 +4,14 @@
     <br>
     <h2>List of Files</h2>
     <ul>
+    {% if listing %}
         {% for file in listing %}
-            <li>{{ file }}</li>
+            {% if ".jpg" in file %}
+                <li><img src="{{ url_for('static',filename="uploads/"+file)}}" style="width:100px;height:60px;"/>
+            {% else %}
+                <li>{{ file }}</li>
+            {% endif %}
         {% endfor %}
+    {% endif %}
     </ul>
 {% endblock %}
