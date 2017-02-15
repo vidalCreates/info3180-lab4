@@ -45,6 +45,9 @@ def add_file():
 
 @app.route('/filelisting')
 def display_files():
+    if not session.get('logged_in'):
+        abort(401)
+
     import os
     rootdir = os.getcwd()
 
